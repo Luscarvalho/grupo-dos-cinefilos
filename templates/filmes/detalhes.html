@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Filme sorteado{% endblock %}
+{% block content %}
+    <section class="container">
+        <h1>Filme Sorteado:</h1>
+        <h2>{{ filme.nome }}</h2>
+        <h3>{{ filme.ano }}</h3>
+        <a href="{% url 'films-sort' %}">Sortear Novamente</a>
+    </section>
+{% endblock %}

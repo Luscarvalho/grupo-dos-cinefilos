@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {% block title %}Página Inicial{% endblock %}
+        </title>
+        {% block style %}
+            <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        {% endblock %}
+    </head>
+    <body>
+        <header class="menu">
+            <a class="logo" href="{% url 'home' %}">Logo</a>
+            <ul>
+                <li>
+                    <a href="{% url 'films-list' %}">Filmes</a>
+                </li>
+                <li>
+                    <a href="{% url 'my-films-list' %}">Meus filmes</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Sair</a>
+                </li>
+            </ul>
+        </header>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %}
+{% block content %}
+    <section>
+        <form action="" method="post">
+            <h1>{{ titulo }}</h1>
+            {% csrf_token %} {{ form.as_p }}
+            <input type="submit" value="{{ botao }}" />
+        </form>
+    </section>
+{% endblock %}

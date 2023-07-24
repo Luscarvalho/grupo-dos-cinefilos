@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Excluir filme{% endblock %}
+{% block content %}
+    <section class="container">
+        <h1>Excluir Filme</h1>
+        <p>Você tem certeza de que deseja excluir o filme "{{ object.nome }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Confirmar Exclusão"></input>
+        </form>
+    </section>
+{% endblock %}
