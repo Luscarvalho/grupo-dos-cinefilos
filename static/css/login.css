@@ -28,14 +28,13 @@ body {
 /* Left Login */
 
 .left-login img {
-  width: 80%;
+  display: none;
 }
 
 /* Login */
 
-.left-login,
 .right-login {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +48,7 @@ body {
 }
 
 .right-login form {
-  width: 50%;
+  width: 100%;
   border-radius: 10px;
   padding: 20px;
 }
@@ -108,3 +107,59 @@ body {
   margin-top: 10px;
 }
 
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+  .left-login img {
+    display: none;
+  }
+
+  .right-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .right-login,
+  .right-login p {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-login form {
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 1002px) {
+  /* For desktop: */
+  .left-login img {
+    display: block;
+    width: 80%;
+  }
+
+  .left-login,
+  .right-login {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .right-login,
+  .right-login p {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-login form {
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
