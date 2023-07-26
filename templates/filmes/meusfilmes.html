@@ -8,7 +8,7 @@
     {% endfor %}
 </ul>
 {% endif %}
-<table>
+<table id="table">
     <thead>
         <tr>
             <th>
@@ -16,11 +16,11 @@
             </th>
             <th><a class="edit" href="{% url 'films-create' %}">Cadastrar</a></th>
         </tr>
-        <tr>
-            <th>Nome</th>
-            <th>Ano</th>
-            <th>Status</th>
-            <th>Opções</th>
+        <tr class="table-header">
+            <th onclick="sortTable(0)">Nome</th>
+            <th onclick="sortTable(1)">Ano</th>
+            <th onclick="sortTable(2)">Status</th>
+            <th onclick="sortTable(3)">Opções</th>
         </tr>
     </thead>
     <tbody>

@@ -125,6 +125,8 @@ td {
   background-color: rgb(255, 202, 202);
 }
 
+/* Sorteio */
+
 .container {
   width: 100%;
   height: calc(100% - 70px);
