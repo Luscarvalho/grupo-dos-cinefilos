@@ -19,12 +19,12 @@ function searchFilm() {
 
 function sortTable(columnIndex) {
     const table = document.getElementById("table");
-    const rows = Array.from(table.rows).slice(2);
-    const isAscending = table.dataset.sortOrder === "asc";
+    const rows = Array.from(table.rows).slice(1);
+    const isAscending = table.dataset.sortOrder === "asc" || table.dataset.sortOrder === undefined;
 
     rows.sort((rowA, rowB) => {
-        const cellA = rowA.cells[columnIndex].textContent;
-        const cellB = rowB.cells[columnIndex].textContent;
+        const cellA = rowA.cells[columnIndex].textContent.toLowerCase();;
+        const cellB = rowB.cells[columnIndex].textContent.toLowerCase();;
 
         if (cellA < cellB) {
             return isAscending ? -1 : 1;

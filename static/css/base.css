@@ -95,7 +95,7 @@ table {
   color: #99aabb;
   background-color: #14181c;
   border-collapse: collapse;
-  margin: 30px auto auto;
+  margin: 20px auto auto;
   border-radius: 1em;
 }
 
@@ -110,7 +110,8 @@ td {
 }
 
 .edit,
-.delete {
+.delete,
+.create {
   padding: 10px;
   border-radius: 10px;
   color: #000000;
@@ -123,6 +124,31 @@ td {
 
 .delete {
   background-color: rgb(255, 202, 202);
+}
+
+.search {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.create {
+  width: 20%;
+  background-color: #ff8000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  background-color: #99aabb;
+  width: 78%;
+  height: 60px;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1rem;
+  outline: none;
 }
 
 /* Sorteio */

@@ -8,14 +8,12 @@
     {% endfor %}
 </ul>
 {% endif %}
+<section class="search">
+    <input type="text" id="search" onkeyup="searchFilm()" placeholder="Pesquisar por nome...">
+    <a class="create" href="{% url 'films-create' %}">Cadastrar</a>
+</section>
 <table id="table">
     <thead>
-        <tr>
-            <th>
-                <input type="text" id="search" onkeyup="searchFilm()" placeholder="Pesquisar por nome...">
-            </th>
-            <th><a class="edit" href="{% url 'films-create' %}">Cadastrar</a></th>
-        </tr>
         <tr class="table-header">
             <th onclick="sortTable(0)">Nome</th>
             <th onclick="sortTable(1)">Ano</th>
