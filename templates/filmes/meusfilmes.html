@@ -1,42 +1,48 @@
 {% extends 'base.html' %}
 {% block title %}Filmes{% endblock %}
 {% block content %}
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Ano</th>
-                <th>Status</th>
-                <th>Opções</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for filme in object_list %}
-                <tr>
-                    <td>{{ filme.nome }}</td>
-                    <td>{{ filme.ano }}</td>
-                    {% if filme.status %}
-                        <td>Assistido</td>
-                    {% else %}
-                        <td>Não Assistido.</td>
-                    {% endif %}
-                    <td>
-                        <a class="edit" href="{% url 'films-update' filme.pk %}">Editar</a>
-                        <a class="delete" href="{% url 'films-delete' filme.pk %}">Excluir</a>
-                    </td>
-                </tr>
-            {% empty %}
-                <tr>
-                    <td colspan="4">Nenhum filme cadastrado.</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %}class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<table>
+    <thead>
+        <tr>
+            <th>
+                <input type="text" id="search" onkeyup="searchFilm()" placeholder="Pesquisar por nome...">
+            </th>
+            <th><a class="edit" href="{% url 'films-create' %}">Cadastrar</a></th>
+        </tr>
+        <tr>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>Status</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for filme in object_list %}
+        <tr>
+            <td>{{ filme.nome }}</td>
+            <td>{{ filme.ano }}</td>
+            {% if filme.status %}
+            <td>Assistido</td>
+            {% else %}
+            <td>Não Assistido.</td>
+            {% endif %}
+            <td>
+                <a class="edit" href="{% url 'films-update' filme.pk %}">Editar</a>
+                <a class="delete" href="{% url 'films-delete' filme.pk %}">Excluir</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Nenhum filme cadastrado.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
