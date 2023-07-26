@@ -78,10 +78,12 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.9);
   }
-    100% {
+
+  100% {
     transform: scale(1);
   }
 }
@@ -101,6 +103,10 @@ th,
 td {
   text-align: start;
   padding: 15px;
+}
+
+.table-header {
+  cursor: pointer;
 }
 
 .edit,
@@ -154,7 +160,7 @@ td {
   font-size: 1.5rem;
 }
 
-.messages li{
+.messages li {
   color: #ff8000;
   font-size: 1.2rem;
   margin-top: 30px;
