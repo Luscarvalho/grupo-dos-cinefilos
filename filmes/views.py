@@ -116,5 +116,5 @@ class FilmsSorteioView:
             messages.error(self, 'Nenhum filme cadastrado.')
             return redirect('films-list')
         else:
-            filme_sorteado = random.choice(films)
+            filme_sorteado = random.choice(films_nao_assistidos)
             return redirect('films-details', filme_sorteado.pk)
