@@ -2,7 +2,7 @@ function searchFilm() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("search");
     filter = input.value.toUpperCase();
-    table = document.getElementById("table");
+    table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];
@@ -38,3 +38,16 @@ function sortTable(columnIndex) {
     rows.forEach(row => table.tBodies[0].appendChild(row));
     table.dataset.sortOrder = isAscending ? "desc" : "asc";
 }
+
+function back() {
+    window.history.back();
+}
+
+$(document).ready(function () {
+    $('#myTable').DataTable({
+        paging: false,
+        info: false,
+        searching: false,
+        responsive: true,
+    });
+});
