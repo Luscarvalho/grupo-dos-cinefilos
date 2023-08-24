@@ -14,4 +14,8 @@ class FilmsForm(forms.ModelForm):
 
         if Films.objects.filter(nome=nome, ano=ano).exists():
             raise forms.ValidationError("Filme já cadastrado.")
+
+        if not ano.isdigit():
+            raise forms.ValidationError("O ano deve conter apenas números.")
+
         return cleaned_data
