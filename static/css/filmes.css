@@ -7,8 +7,9 @@
     --color-main: #1b2127;
     --color-black: #14181c;
     --color-green: #00e054;
+    --color-yellow: #fff67a;
+    --color-red: #ff6f6f;
     --color-orange: #ff8000;
-    --color-blue: #40bcf4;
     --color-gray: #99aabb;
     --color-white: #E5E7EB;
 }
@@ -100,14 +101,16 @@ th.opcoes-column {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    color: var(--color-black);
+    font-weight: bolder;
 }
 
 .edit {
-    background-color: var(--color-blue);
+    background-color: var(--color-yellow);
 }
 
 .delete {
-    background-color: var(--color-orange);
+    background-color: var(--color-red);
 }
 
 .search {
@@ -118,6 +121,9 @@ th.opcoes-column {
 }
 
 .create {
+    color: var(--color-black);
+    font-weight: bolder;
+    border-radius: 10px;
     width: 20%;
     background-color: var(--color-green);
     display: flex;

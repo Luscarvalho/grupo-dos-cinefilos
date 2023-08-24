@@ -15,8 +15,15 @@
 
 <body>
     <header class="menu">
-        <a class="logo" href="{% url 'home' %}">Logo</a>
+        <a class="logo" href="{% url 'home' %}">
+            <img src="{% static 'img/Logo.svg' %}" alt="Logo">
+        </a>
         <ul>
+            {% if not request.path == '/' %}
+            <li>
+                <a href="{% url 'films-sort' %}">Sortear filme</a>
+            </li>
+            {% endif %}
             <li>
                 <a href="{% url 'films-list' %}">Filmes</a>
             </li>
@@ -29,6 +36,9 @@
         </ul>
     </header>
     {% block content %}{% endblock %}
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 

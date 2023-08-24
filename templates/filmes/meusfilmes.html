@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Filmes{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/filmes.css' %}" />
+{% endblock %}
 {% block content %}
 {% if messages %}
 <ul class="messages">
@@ -12,13 +16,13 @@
     <input type="text" id="search" onkeyup="searchFilm()" placeholder="Pesquisar por nome...">
     <a class="create" href="{% url 'films-create' %}">Cadastrar</a>
 </section>
-<table id="table">
+<table id="myTable">
     <thead>
         <tr class="table-header">
-            <th onclick="sortTable(0)">Nome</th>
-            <th onclick="sortTable(1)">Ano</th>
-            <th onclick="sortTable(2)">Status</th>
-            <th onclick="sortTable(3)">Opções</th>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>Status</th>
+            <th class="opcoes-column">Opções</th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +35,7 @@
             {% else %}
             <td>Não Assistido.</td>
             {% endif %}
-            <td>
+            <td class="option">
                 <a class="edit" href="{% url 'films-update' filme.pk %}">Editar</a>
                 <a class="delete" href="{% url 'films-delete' filme.pk %}">Excluir</a>
             </td>
