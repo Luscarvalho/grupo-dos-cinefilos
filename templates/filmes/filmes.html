@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Filmes{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/filmes.css' %}" />
+{% endblock %}
 {% block content %}
 {% if messages %}
 <ul class="messages">
