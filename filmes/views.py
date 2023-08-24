@@ -66,6 +66,10 @@ class FilmsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 form.add_error(
                     'nome', 'Um filme com o mesmo nome e ano já existe.')
                 return self.form_invalid(form)
+        if film.ano != form.cleaned_data['ano']:
+            if not form.cleaned_data['ano'].isdigit():
+                form.add_error('ano', 'O ano deve conter apenas números.')
+                return self.form_invalid(form)
         return super().form_valid(form)
 
     def test_func(self):
