@@ -11,7 +11,7 @@
   --color-red: #ff6f6f;
   --color-blue: #40bcf4;
   --color-gray: #99aabb;
-  --color-white: #E5E7EB;
+  --color-white: #e5e7eb;
 }
 
 li,
@@ -62,7 +62,7 @@ body {
   align-items: center;
 }
 
-.logo img {
+.logo svg {
   height: 60%;
   cursor: pointer;
 }
@@ -127,4 +127,12 @@ input[type="button"] {
 .errorlist {
   color: var(--color-orange);
   margin-top: 10px;
+}
+
+#camera-body,
+#reel-1,
+#reel-2 {
+  fill: var(--color-green);
+  fill-opacity: 0.95;
+  stroke: none;
 }
