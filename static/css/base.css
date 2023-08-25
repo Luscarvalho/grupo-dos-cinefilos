@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,8 @@
   --color-main: #1b2127;
   --color-black: #14181c;
   --color-gray: #99aabb;
-  --color-white: #E5E7EB;
+  --color-white: #e5e7eb;
+  --color-green: #00e054;
 }
 
 li,
@@ -61,7 +62,7 @@ body {
   align-items: center;
 }
 
-.logo img {
+.logo svg {
   height: 60%;
   cursor: pointer;
 }
@@ -80,17 +81,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(43deg, #4158D0 0%, #C850C0 46.00%, #FFCC70 100%);
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
   width: 300px;
   height: 300px;
   border-radius: 50%;
   font-size: 1.8rem;
   font-weight: bolder;
-
 }
 
 .sorteio a:hover {
-  box-shadow: #C850C0 0px 0px 30px 0px;
+  box-shadow: #c850c0 0px 0px 30px 0px;
   transition: ease-in-out 0.5s;
 }
 
@@ -126,4 +126,12 @@ body {
   text-transform: uppercase;
   margin-top: 20px;
   font-size: 1.5rem;
+}
+
+#camera-body,
+#reel-1,
+#reel-2 {
+  fill: var(--color-green);
+  fill-opacity: 0.95;
+  stroke: none;
 }
