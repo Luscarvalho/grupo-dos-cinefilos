@@ -76,8 +76,12 @@ table {
     color: var(--color-white);
     background-color: var(--color-black);
     border-radius: 1em;
+    margin: 20px auto !important;
 }
 
+table td {
+    padding: 15px !important;
+}
 
 .option {
     display: flex;
