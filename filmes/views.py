@@ -59,17 +59,24 @@ class FilmsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         film = self.get_object()
-        if film.nome != form.cleaned_data['nome'] or film.ano != form.cleaned_data['ano']:
-            existing_film = Films.objects.filter(nome=form.cleaned_data['nome'], ano=form.cleaned_data['ano']).exclude(
-                pk=film.pk).first()
-            if existing_film:
-                form.add_error(
-                    'nome', 'Um filme com o mesmo nome e ano já existe.')
-                return self.form_invalid(form)
-        if film.ano != form.cleaned_data['ano']:
-            if not form.cleaned_data['ano'].isdigit():
-                form.add_error('ano', 'O ano deve conter apenas números.')
-                return self.form_invalid(form)
+        nome = form.cleaned_data['nome']
+        ano = form.cleaned_data['ano']
+
+        existing_film = Films.objects.filter(
+            nome=nome, ano=ano).exclude(pk=film.pk).first()
+        if existing_film:
+            form.add_error(
+                'nome', 'Um filme com o mesmo nome e ano já existe.')
+            return self.form_invalid(form)
+
+        if not ano.isdigit():
+            form.add_error('ano', 'O ano deve conter apenas números.')
+            return self.form_invalid(form)
+
+        if len(ano) != 4:
+            form.add_error('ano', 'Digite o ano completo.')
+            return self.form_invalid(form)
+
         return super().form_valid(form)
 
     def test_func(self):
